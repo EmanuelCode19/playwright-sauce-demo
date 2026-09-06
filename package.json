@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-      "test": "cucumber-js --require-module ts-node/register --require step-definitions/**/*.ts --require features/hooks/**/*.ts"
-
+    "test": "cucumber-js --require-module ts-node/register --require step-definitions/**/*.ts --require features/hooks/**/*.ts"
   },
   "keywords": [],
   "author": "",

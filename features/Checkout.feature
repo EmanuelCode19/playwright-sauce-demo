@@ -7,12 +7,14 @@ Feature: checkout
         And toca el icono de carrito
         And ha tocado el boton Checkout
 
+    @regresion
     Scenario: Completar proceso de informacion de usuario con campos vacios
         Given el usuario se encuentra en la pantalla de checkout
         When toca el boton Continue
         Then el sistema muestra alerta "Error: First Name is required"
         
 
+    @regresion
     Scenario Outline: Completar el formulario parcialmente 
         Given el usuario se encuentra en la pantalla de checkout
         When ingresa el valor "<name>" en el campo First Name

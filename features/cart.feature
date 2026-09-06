@@ -5,6 +5,7 @@ Feature: Cart
       And el usuario ha Iniciado sesion con "standard_user" y "secret_sauce"
     
 
+    @regresion
     Scenario Outline: Validar productos agregados se muestran en el carrito de compra
         Given el usuario ha agregado "<products>" productos al carrito
         When toca el icono de carrito
@@ -14,6 +15,7 @@ Feature: Cart
     |2         |  Sauce Labs Bike Light, Sauce Labs Backpack        |
     |3         |  Sauce Labs Bike Light, Sauce Labs Backpack,Sauce Labs Onesie         |
         
+    @regresion
     Scenario Outline: Validar detalles de productos
         Given el usuario ha agregado "<products>" productos al carrito
         When toca el icono de carrito
