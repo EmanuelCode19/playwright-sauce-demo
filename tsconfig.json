@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+   "module": "NodeNext",
+"moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [
+      "node",
+      "@cucumber/cucumber"
+    ],
+    "skipLibCheck": true
+  },
+  "include": [
+    "step-definitions/*.ts",
+    "pages/*.ts",
+    "features/hooks/*.ts",
+    "utils/*.ts",
+    "support/*.ts"
+  ]
+}
