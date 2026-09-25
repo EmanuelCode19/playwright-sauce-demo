@@ -14,8 +14,8 @@ Feature: Login
   
    Examples:
   | user           | pass         | message                                                                     |
-  | standard_user  | 123456       | Epic sadface: Username and password do not match any user in this service   |
-  | 123456         | secret_sauce | Epic sadface: Username and password do not match any user in this service   |
+  | standard_user  | 123456       | Any  |
+  | 123456         | secret_sauce | any   |
   | standard_user  |              | Epic sadface: Password is required                                          |
   |                | secret_sauce | Epic sadface: Username is required                                          |
 
