@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone repository') {
+            steps {
+                git branch: 'main',
+                url: "https://github.com/EmanuelCode19/playwright-sauce-demo.git"
+                echo "Repositorio clonado exitosamente"
+            }
+        }
+        stage("Check help tool needed"){
+            steps{
+                 bat "node --version"
+                 echo "Node esta instalado exitosamente"
+            }
+        }
+        stage('Install dependencies needs'){
+            steps{
+                bat 'pnpm i'
+                echo 'Dependencias instaladas exitosamente'
+            }
+        }
+         stage('Run testing'){
+            steps{
+                bat 'pnpm exec cucumber-js --tags ' + "@${TiposDePruebas}"
+                echo "${TiposDePruebas}"
+                echo 'Pruebas ejecutadas exitosamente'
+            }
+        }
+         stage('File report'){
+            steps{
+               archiveArtifacts artifacts: 'reports/*.html, reports/*.json',
+                                 allowEmptyArchive: false,
+                                 fingerprint: true
+                echo "Archivo listo para su descarga"
+            }
+        }
+    }
+}
